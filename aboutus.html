@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stamford University Bangladesh - Computer Science & Engineering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    
+    .hero-bg {
+      transition: transform 1.5s ease, opacity 1.5s ease;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!--  Header -->
+<div class="bg-gradient-to-r from-green-800 to-green-600 text-white py-2 px-6 text-right font-semibold">
+  University of Barishal
+</div>
+
+<header class="sticky top-0 z-50 bg-white shadow-lg">
+  <div class="flex justify-between items-center px-6 py-4">
+
+    <!-- Left Logo -->
+    <div class="flex items-center space-x-4">
+      <div class="bg-green-700 text-white font-serif text-4xl md:text-6xl px-4 py-2 rounded-lg shadow-lg">
+        BU
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xl md:text-3xl font-bold text-gray-900 uppercase">Engineering</span>
+        <span class="text-sm md:text-lg text-gray-600">Computer Science & Engineering</span>
+      </div>
+    </div>
+
+    <!-- Desktop Navbar -->
+    <div class="hidden md:flex items-center space-x-6">
+
+      <!-- Search -->
+      <div class="flex items-center border-2 border-green-700 rounded-full px-4 py-2 w-72 focus-within:ring-2 focus-within:ring-green-500 transition">
+        <input type="text" placeholder="Search..." class="outline-none flex-1 text-sm md:text-base pl-2"/>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+      </div>
+
+      <!-- Navbar Links -->
+            
+<nav class="flex flex-wrap space-x-6 text-gray-800 font-medium">
+  <a href="index.html" class="hover:text-green-700 transition">Home</a>
+  <a href="aboutus.html" class="hover:text-green-700 transition">About</a>
+  <a href="academic.html" class="hover:text-green-700 transition">Academics</a>
+  <a href="notice.html" class="hover:text-green-700 transition">Notice</a>
+  <a href="research.html" class="hover:text-green-700 transition">Research</a>
+  <a href="faculty.html" class="hover:text-green-700 transition">Our Faculty</a>
+</nav>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-green-700 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t px-6 pb-4 space-y-2">
+    <div class="flex items-center border-2 border-green-700 rounded-full px-4 py-2 mb-2">
+      <input type="text" placeholder="Search..." class="outline-none flex-1 text-base pl-2"/>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
+      </svg>
+    </div>
+
+    <a href="home.html" class="block py-2 hover:bg-green-50 rounded">Home</a>
+    <button class="w-full text-left py-2 hover:bg-green-50 flex justify-between items-center rounded" onclick="toggleDropdown('mobile-about-menu')">About ▼</button>
+    <div id="mobile-about-menu" class="hidden pl-4 space-y-1">
+      <a href="overview.html" class="block py-1 hover:bg-green-50 rounded">Overview</a>
+      <a href="history.html" class="block py-1 hover:bg-green-50 rounded">History</a>
+      <a href="contact.html" class="block py-1 hover:bg-green-50 rounded">Contact</a>
+    </div>
+
+    <button class="w-full text-left py-2 hover:bg-green-50 flex justify-between items-center rounded" onclick="toggleDropdown('mobile-academics-menu')">Academics ▼</button>
+    <div id="mobile-academics-menu" class="hidden pl-4 space-y-1">
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Courses</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Bachelor's</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Master's</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">PhD</a>
+    </div>
+
+    <a href="notice.html" class="block py-2 hover:bg-green-50 rounded">Notice</a>
+    <a href="#" class="block py-2 hover:bg-green-50 rounded">Research</a>
+    <a href="faculty.html" class="block py-2 hover:bg-green-50 rounded">Our Faculty</a>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Mobile dropdown toggle
+  function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('hidden');
+  }
+
+  // Desktop dropdown hover
+  document.querySelectorAll('header .relative').forEach(parent => {
+    parent.addEventListener('mouseenter', () => {
+      parent.querySelector('div').classList.remove('hidden');
+    });
+    parent.addEventListener('mouseleave', () => {
+      parent.querySelector('div').classList.add('hidden');
+    });
+  });
+</script>
+<!-- Main Section  -->
+<section class="bg-gray-50 text-gray-800 font-sans">
+  <div class="max-w-6xl mx-auto px-4 py-16 space-y-10">
+
+    <!-- I Paragraphs -->
+    <div class="space-y-6 text-lg leading-relaxed text-gray-800">
+      <p>
+        The <strong class="text-green-700">Department of Computer Science and Engineering (CSE)</strong> at the <strong class="text-green-700">University of Barisal</strong> is committed to delivering quality education and advancing research in computer science. Since its inception in <strong>2014</strong>, the department has promoted innovation, critical thinking, and academic excellence.
+      </p>
+      <p>
+        With strong ties to industry and a curriculum designed to meet modern demands, the department equips students with both theoretical knowledge and practical skills. Programs are continually updated to stay in sync with the latest technologies and best practices in the field.
+      </p>
+    </div>
+
+    <!-- Facilities Card -->
+    <div class="bg-white rounded-xl shadow-lg p-8 transition hover:shadow-xl hover:scale-[1.01] duration-300">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Department Facilities</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 list-disc list-inside text-gray-700 text-base">
+        <li><strong>Established:</strong> 2014</li>
+        <li><strong>Classrooms & Labs:</strong> 5</li>
+        <li><strong>Total Faculty:</strong> 8</li>
+        <li><strong>Admin & Tech Staff:</strong> 4</li>
+        <li>Fully-equipped computer labs with high-speed internet</li>
+        <li>Smart classrooms with multimedia support</li>
+      </ul>
+    </div>
+
+    <!-- Academic Programs Card -->
+    <div class="bg-white rounded-xl shadow-lg p-8 transition hover:shadow-xl hover:scale-[1.01] duration-300">
+      <h2 class="text-2xl font-bold mb-4 text-green-700">Academic Programs</h2>
+      <p class="text-gray-700 mb-4">
+        The department currently offers the following degree programs:
+      </p>
+      <ul class="list-disc list-inside text-gray-700 space-y-2 text-base">
+        <li><strong>Bachelor of Science (BSc)</strong> in Computer Science & Engineering</li>
+        <li><strong>Master of Science (MSc)</strong> in Computer Science & Engineering</li>
+      </ul>
+    </div>
+
+    <!-- Closing Paragraph -->
+    <p class="text-lg text-gray-800 leading-relaxed">
+      The department is committed to fostering a collaborative, research-driven, and student-centered environment. Our graduates are empowered to innovate, lead, and contribute meaningfully to the global tech ecosystem.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- Footer (Place it OUTSIDE the main grid) -->
+<footer class="bg-green-900 text-white py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Top Section -->
+    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+      <h3 class="text-lg font-semibold mb-4 md:mb-0">
+        The CSE Intranet: Resources for Faculty, Staff, and Students
+      </h3>
+      <div class="flex gap-4">
+        <a href="#" class="bg-white text-green-900 px-4 py-2 rounded-md font-medium shadow hover:shadow-md transition">
+          For Faculty & Staff →
+        </a>
+        <a href="#" class="bg-white text-green-900 px-4 py-2 rounded-md font-medium shadow hover:shadow-md transition">
+          For Current Students →
+        </a>
+      </div>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+      <!-- Left, Middle, Right Columns -->
+      <div>
+        <h4 class="text-lg font-semibold mb-2">University of Barishal</h4>
+        <p class="text-gray-200 mb-2">Department of Computer Science & Engineering</p>
+        <p class="mb-1">Barishal, Bangladesh</p>
+        <p class="mb-2">Phone: +880-xxxx-xxxxxx</p>
+        <p class="mb-2">Email: cse@bu.edu.bd</p>
+        <div class="mt-3 flex flex-col gap-1">
+          <a href="#" class="hover:underline">Contact Us →</a>
+          <a href="#" class="hover:underline">Campus Map →</a>
+          <a href="#" class="hover:underline">Directions →</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+        <div class="flex flex-col gap-1">
+          <a href="aboutus.html" class="hover:underline">Home</a>
+          <a href="academic.html" class="hover:underline">Academics</a>
+          
+          <a href="notice.html" class="hover:underline">Notice</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Student Resources</h4>
+        <div class="flex flex-col gap-1">
+          <a href="#" class="hover:underline">Course Registration</a>
+          <a href="#" class="hover:underline">Library</a>
+          <a href="#" class="hover:underline">CSE Forum</a>
+          <a href="#" class="hover:underline">IT Support</a>
+          <a href="#" class="hover:underline">Events & Activities</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-8 border-t border-green-700 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
+      <p>© University of Barishal, Department of CSE. All Rights Reserved.</p>
+      <a href="#" class="mt-2 md:mt-0 inline-flex items-center bg-green-700 hover:bg-green-800 px-4 py-2 rounded-md text-white font-medium transition">
+        ↑ Back to Top
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+  
+
+
+</body>
+</html>

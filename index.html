@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of  Barishal - Computer Science & Engineering</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    
+    .hero-bg {
+      transition: transform 1.5s ease, opacity 1.5s ease;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Header -->
+<div class="bg-gradient-to-r from-green-800 to-green-600 text-white py-2 px-6 text-right font-semibold">
+  University of Barishal
+</div>
+
+<header class="sticky top-0 z-50 bg-white shadow-lg">
+  <div class="flex justify-between items-center px-6 py-4">
+
+    <!-- Left Logo + Department -->
+    <div class="flex items-center space-x-4">
+      <div class="bg-green-700 text-white font-serif text-4xl md:text-6xl px-4 py-2 rounded-lg shadow-lg">
+        BU
+      </div>
+      <div class="flex flex-col">
+        <span class="text-xl md:text-3xl font-bold text-gray-900 uppercase">Engineering</span>
+        <span class="text-sm md:text-lg text-gray-600">Computer Science & Engineering</span>
+      </div>
+    </div>
+
+    <!-- Desktop Navbar -->
+    <div class="hidden md:flex items-center space-x-6">
+
+      <!-- Search -->
+      <div class="flex items-center border-2 border-green-700 rounded-full px-4 py-2 w-72 focus-within:ring-2 focus-within:ring-green-500 transition">
+        <input type="text" placeholder="Search..." class="outline-none flex-1 text-sm md:text-base pl-2"/>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+      </div>
+
+      <!-- Navbar Links -->
+      
+<nav class="flex flex-wrap space-x-6 text-gray-800 font-medium">
+  <a href="index.html" class="hover:text-green-700 transition">Home</a>
+  <a href="aboutus.html" class="hover:text-green-700 transition">About</a>
+  <a href="academic.html" class="hover:text-green-700 transition">Academics</a>
+  <a href="notice.html" class="hover:text-green-700 transition">Notice</a>
+ 
+  <a href="faculty.html" class="hover:text-green-700 transition">Our Faculty</a>
+</nav>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-green-700 focus:outline-none">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden bg-white border-t px-6 pb-4 space-y-2">
+    <div class="flex items-center border-2 border-green-700 rounded-full px-4 py-2 mb-2">
+      <input type="text" placeholder="Search..." class="outline-none flex-1 text-base pl-2"/>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M16 10a6 6 0 11-12 0 6 6 0 0112 0z" />
+      </svg>
+    </div>
+
+    <a href="home.html" class="block py-2 hover:bg-green-50 rounded">Home</a>
+    <button class="w-full text-left py-2 hover:bg-green-50 flex justify-between items-center rounded" onclick="toggleDropdown('mobile-about-menu')">About ▼</button>
+    <div id="mobile-about-menu" class="hidden pl-4 space-y-1">
+      <a href="overview.html" class="block py-1 hover:bg-green-50 rounded">Overview</a>
+      <a href="history.html" class="block py-1 hover:bg-green-50 rounded">History</a>
+      <a href="contact.html" class="block py-1 hover:bg-green-50 rounded">Contact</a>
+    </div>
+
+    <button class="w-full text-left py-2 hover:bg-green-50 flex justify-between items-center rounded" onclick="toggleDropdown('mobile-academics-menu')">Academics ▼</button>
+    <div id="mobile-academics-menu" class="hidden pl-4 space-y-1">
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Courses</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Bachelor's</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">Master's</a>
+      <a href="#" class="block py-1 hover:bg-green-50 rounded">PhD</a>
+    </div>
+
+    <a href="notice.html" class="block py-2 hover:bg-green-50 rounded">Notice</a>
+    <a href="#" class="block py-2 hover:bg-green-50 rounded">Research</a>
+    <a href="faculty.html" class="block py-2 hover:bg-green-50 rounded">Our Faculty</a>
+  </div>
+</header>
+
+
+
+<section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+  <!-- Background Slideshow -->
+  <div id="hero-slideshow" class="absolute inset-0">
+    <div class="hero-bg absolute inset-0 opacity-100 scale-110 bg-cover bg-center transition duration-1000" style="background-image: url('photo_2025-08-20_21-28-31\ \(2\).jpg');"></div>
+    <div class="hero-bg absolute inset-0 opacity-0 bg-cover bg-center transition duration-1000" style="background-image: url('img1.jpg');"></div>
+    <div class="hero-bg absolute inset-0 opacity-0 bg-cover bg-center transition duration-1000" style="background-image: url('image.png');"></div>
+  </div>
+
+  <!-- Overlay  -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/20"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 max-w-3xl mx-auto px-6 animate-fadeIn">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white drop-shadow-lg">
+      Welcome to University of Barishal
+    </h1>
+    <p class="text-lg md:text-2xl text-gray-200 mb-8">
+      Department of Computer Science & Engineering
+    </p>
+
+    <!--  Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="aboutus.html" class="px-6 py-3 rounded-lg bg-green-600 hover:bg-green-700 text-white font-semibold transition duration-300 shadow-lg">
+        Explore Programs
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+<!--  animation -->
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+  
+
+<section class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+  <!-- Left Content -->
+  <div class="flex flex-col justify-center">
+  <h2 class="text-4xl font-bold text-gray-900 mb-6">About Us</h2>
+  <p class="text-gray-700 leading-relaxed mb-4">
+    The Department of Computer Science and Engineering (CSE) at the University of Barishal is committed to excellence in teaching, research, and innovation. Since its inception, the department has aimed to produce skilled graduates equipped to meet the challenges of the ever-evolving tech industry.
+  </p>
+  <p class="text-gray-700 leading-relaxed mb-6">
+    The department offers undergraduate and postgraduate programs that blend theoretical foundations with hands-on experience. Our dedicated faculty, modern laboratories, and dynamic academic environment foster critical thinking, creativity, and lifelong learning among students.
+  </p>
+
+  <div class="flex items-center gap-6">
+    <!-- Red button -->
+    <a href="aboutus.html"
+       class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-md text-sm font-medium transition">
+      Read more →
+    </a>
+
+    <!-- Link button -->
+    
+  </div>
+</div>
+
+  </div>
+
+  <!-- Right Image Grid -->
+  <div class="grid grid-cols-2 gap-4">
+    <img src="img4.jpg" alt="Students working"
+         class="rounded-md shadow-md object-cover w-full h-52 md:h-48">
+    <img src="img5.jpg" alt="Research lab"
+         class="rounded-md shadow-md object-cover w-full h-52 md:h-48">
+    <img src="img6.jpg" alt="Group discussion"
+         class="rounded-md shadow-md object-cover w-full h-52 md:h-48">
+    <img src="WhatsApp Image 2025-08-20 at 20.08.35_94a0c45d.jpg" alt="Collaboration"
+         class="rounded-md shadow-md object-cover w-full h-52 md:h-48">
+  </div>
+</section>
+
+
+
+
+  <!--head in dept-->
+  <section class="relative bg-cover bg-center bg-no-repeat py-20 px-6 mt-5 ml-16 mr-16" style="background-image: url('image.png');">
+  <!-- Overlay -->
+  <div clss="absolute inset-0 bg-slate-500 bg-opacity-70"></div>
+
+  <!-- Content -->
+  <div class="relative max-w-6xl mx-auto text-white z-10">
+    
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h3 class="text-sm font-semibold uppercase tracking-widest text-blue-200">Welcome Message</h3>
+      <h2 class="text-4xl font-bold border-b-4 border-blue-400 inline-block pb-2 mt-2">
+        Message from the Department Head
+      </h2>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      
+      <!-- Profile Card -->
+      <div class="bg-white/90 text-gray-900 rounded-xl shadow-lg p-6 text-center">
+        <img src="rahatsir.png" alt="Dr. Rahat Hossain Faisal" class="w-40 h-40 mx-auto rounded-lg object-cover mb-4 shadow-md">
+        <h3 class="text-xl font-bold text-blue-900">Dr. Rahat Hossain Faisal</h3>
+        <p class="mt-2 text-sm text-gray-700 leading-5">
+          Chairman, Department of <br>
+          Computer Science & Engineering <br>
+          University of Barishal
+        </p>
+      </div>
+
+      <!-- Message Text -->
+      <div class="md:col-span-2 bg-white/90 text-gray-800 rounded-xl shadow-lg p-8 leading-relaxed">
+        <blockquote class="text-xl font-medium italic border-l-4 border-blue-600 pl-6">
+          “It is my pleasure to welcome you to the Department of Computer Science and Engineering at the University of Barishal.
+          Our mission is to empower future technologists through world-class education, research, and innovation.
+          We strive to create a collaborative academic culture enriched with creativity, ethics, and excellence.
+          <br><br>
+          I invite all students, educators, and industry leaders to connect with us in building a smarter future together.”
+        </blockquote>
+        <p class="mt-6 text-right font-semibold text-blue-900">— Dr. Rahat Hossain Faisal</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!--event-->
+<section class="bg-gray-50 py-10 px-4 md:px-10 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- Notices Section -->
+    <div class="bg-white border rounded shadow">
+      <div class="bg-blue-900 text-white text-xl font-bold px-5 py-3 uppercase">Notices</div>
+      <div class="divide-y divide-gray-200">
+        
+        <!-- Notice Item -->
+        <a href="#" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">15</div>
+              <div class="uppercase text-xs font-medium">Sep,</div>
+              <div class="text-sm">2025</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            4th semester results have been published
+          </p>
+        </a>
+
+        <a href="#" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">05</div>
+              <div class="uppercase text-xs font-medium">Oct,</div>
+              <div class="text-sm">2025</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            5th semester routine has been published
+          </p>
+        </a>
+
+        <a href="notice.html" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">02</div>
+              <div class="uppercase text-xs font-medium">Sep,</div>
+              <div class="text-sm">2025</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            All 2nd-year students must submit their ID cards
+          </p>
+        </a>
+
+      </div>
+      <div class="px-5 py-3 text-right">
+        <a href="notice.html" class="text-blue-700 hover:underline text-sm font-medium">View More</a>
+      </div>
+    </div>
+
+    <!-- Events Section -->
+    <div class="bg-white border rounded shadow">
+      <div class="bg-blue-900 text-white text-xl font-bold px-5 py-3 uppercase">Events</div>
+      <div class="divide-y divide-gray-200">
+
+        <!-- Event Item -->
+        <a href="#" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">29</div>
+              <div class="uppercase text-xs font-medium">May,</div>
+              <div class="text-sm">2025</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            National High Programming Contest organized by the CSE Department of BU
+          </p>
+        </a>
+
+        <a href="#" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">05</div>
+              <div class="uppercase text-xs font-medium">Aug,</div>
+              <div class="text-sm">2025</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            Orientation of CSE 12th Batch
+          </p>
+        </a>
+
+        <a href="#" class="flex items-center p-4 hover:bg-gray-100 transition">
+          <div class="w-20 text-center mr-4">
+            <div class="bg-blue-100 text-blue-900 font-semibold text-sm p-2 rounded">
+              <div class="text-xl">01</div>
+              <div class="uppercase text-xs font-medium">Feb,</div>
+              <div class="text-sm">2026</div>
+            </div>
+          </div>
+          <p class="text-blue-700 font-medium hover:underline">
+            BDApps organized a program
+          </p>
+        </a>
+
+      </div>
+      <div class="px-5 py-3 text-right">
+        <a href="notice.html" class="text-blue-700 hover:underline text-sm font-medium">View More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!--footer-->
+<footer class="bg-green-900 text-white py-10 px-6">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Top Section: Intranet -->
+    <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+      <h3 class="text-lg font-semibold mb-4 md:mb-0">
+        The CSE Intranet: Resources for Faculty, Staff, and Students
+      </h3>
+      <div class="flex gap-4">
+        <a href="#" class="bg-white text-green-900 px-4 py-2 rounded-md font-medium shadow hover:shadow-md transition">
+          For Faculty & Staff →
+        </a>
+        <a href="#" class="bg-white text-green-900 px-4 py-2 rounded-md font-medium shadow hover:shadow-md transition">
+          For Current Students →
+        </a>
+      </div>
+    </div>
+
+    <!-- contact -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+
+      <!-- : Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-2">University of Barishal</h4>
+        <p class="text-gray-200 mb-2">Department of Computer Science & Engineering</p>
+        <p class="mb-1">Barishal, Bangladesh</p>
+        <p class="mb-2">Phone: +880-11111111</p>
+        <p class="mb-2">Email:cse@bu.edu.bd</p>
+
+        <div class="mt-3 flex flex-col gap-1">
+          <a href="#" class="hover:underline">Contact Us →</a>
+          <a href="#" class="hover:underline">Campus Map →</a>
+          <a href="#" class="hover:underline">Directions →</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Quick Links</h4>
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="academic.html" class="hover:underline">Academics</a>
+          
+          <a href="notice.html" class="hover:underline">Notice</a>
+        </div>
+      </div>
+
+      <!-- Student Resources -->
+      <div>
+        <h4 class="text-lg font-semibold mb-2">Student Resources</h4>
+        <div class="flex flex-col gap-1">
+          <a href="index.html" class="hover:underline">Course Registration</a>
+          <a href="index.html" class="hover:underline">Library</a>
+          <a href="index.html" class="hover:underline">CSE Forum</a>
+          <a href="index.html" class="hover:underline">IT Support</a>
+          <a href="index.html" class="hover:underline">Events & Activities</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="mt-8 border-t border-green-700 pt-4 flex flex-col md:flex-row justify-between items-center text-sm">
+      <p>© University of Barishal, Department of CSE. All Rights Reserved.</p>
+      <a href="#" class="mt-2 md:mt-0 inline-flex items-center bg-green-700 hover:bg-green-800 px-4 py-2 rounded-md text-white font-medium transition">
+        ↑ Back to Top
+      </a>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+  <!-- JavaScript for Mobile Menu and Hero Slideshow -->
+  <script>
+    // Mobile menu toggle
+    const menuButton = document.querySelector('.md\\:hidden button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+
+    // Hero slideshow
+    const slides = document.querySelectorAll('#hero-slideshow .hero-bg');
+    let current = 0;
+
+    function showNextSlide() {
+      slides[current].classList.remove('scale-105');
+      slides[current].classList.add('opacity-0');
+
+      current = (current + 1) % slides.length;
+
+      slides[current].classList.add('scale-105');
+      slides[current].classList.remove('opacity-0');
+    }
+
+    setInterval(showNextSlide, 5000); // change slide every 5 seconds
+    // Mobile menu toggle
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+  // Mobile dropdown toggle
+  function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('hidden');
+  }
+
+  // Desktop dropdown hover
+  document.querySelectorAll('header .relative').forEach(parent => {
+    parent.addEventListener('mouseenter', () => {
+      parent.querySelector('div').classList.remove('hidden');
+    });
+    parent.addEventListener('mouseleave', () => {
+      parent.querySelector('div').classList.add('hidden');
+    });
+  });
+  </script>
+
+  
+</body>
+</html>
